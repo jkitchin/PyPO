@@ -1,5 +1,5 @@
 import numpy as np
-from pypo import multimodel_rep, OI_eval
+from pypo import multimodel_rep, OI_eval, AIS2AOS_map
 
 
 
@@ -16,13 +16,15 @@ DOS_bounds =  np.array([[20, 25],
 AIS_bounds =  np.array([[10, 100],
                         [0.5, 2]])
 
-AIS_resolution =  [25, 25]
+AIS_resolution =  [5, 5]
 
 model  = dma_mr_design
 
-AOS_region  =  multimodel_rep(model, AIS_bounds, AIS_resolution)
+# AIS, AOS = AIS2AOS_map(model, AIS_bounds, AIS_resolution)
 
-OI = OI_eval(AOS_region, DOS_bounds)
+AOS_region  =  multimodel_rep(model, AIS_bounds, AIS_resolution, plot=False)
+
+OI = OI_eval(AOS_region, DOS_bounds, plot=False)
 
 
 
@@ -41,9 +43,9 @@ OI = OI_eval(AOS_region, DOS_bounds)
 
 # model  = dma_mr_mvs
 
-# AOS_region  =  multimodel_rep(AIS_bounds,  AIS_resolution, model)
+# AOS_region  =  multimodel_rep(model, AIS_bounds,  AIS_resolution, plot = False)
 
-# OI = OI_eval(AOS_region, DOS_bounds)
+# OI = OI_eval(AOS_region, DOS_bounds, plot = False)
 
 
 
@@ -59,7 +61,7 @@ OI = OI_eval(AOS_region, DOS_bounds)
 # AIS_bounds =  np.array([[0, 10],
 #                         [0, 10]])
 
-# AIS_resolution =  [3, 3]
+# AIS_resolution =  [15, 15]
 
 # model =  shower2x2
 
