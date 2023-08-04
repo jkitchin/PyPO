@@ -1,0 +1,826 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Process Operability Overview &#8212; PyPO&#39;s documentation.</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'operability_overview';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Process Operability Algorithms" href="algorithms.html" />
+    <link rel="prev" title="Installation" href="installation.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/pypo_logo.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="_static/pypo_logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    PyPO Documentation 1.0.0
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
+
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Process Operability Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="algorithms.html">Process Operability Algorithms</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="api.html">API Documentation</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="_autosummary/pypo.html">pypo</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="examples_gallery/index_example_gallery.html">Examples Gallery</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bibliography.html">Bibliography</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/victoraalves/python_operability" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/victoraalves/python_operability/issues/new?title=Issue%20on%20page%20%2Foperability_overview.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/operability_overview.rst" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.rst</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Process Operability Overview</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-process-operability">What is process operability?</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-underlying-problem-design-and-control">The underlying problem: Design and control</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#operability-sets">Operability sets</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-available-input-set-ais">The Available Input Set (AIS)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-achievable-output-set-aos">The Achievable Output Set (AOS)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-desired-output-set-dos">The Desired Output Set (DOS)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-desired-input-set-dis">The Desired Input Set (DIS)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-expected-disturbance-set-dis">The Expected Disturbance Set (DIS)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-operability-index-oi">The Operability Index (OI)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#important-features-of-the-oi">Important features of the OI</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section id="process-operability-overview">
+<h1>Process Operability Overview<a class="headerlink" href="#process-operability-overview" title="Permalink to this heading">#</a></h1>
+<section id="what-is-process-operability">
+<h2>What is process operability?<a class="headerlink" href="#what-is-process-operability" title="Permalink to this heading">#</a></h2>
+<section id="the-underlying-problem-design-and-control">
+<h3>The underlying problem: Design and control<a class="headerlink" href="#the-underlying-problem-design-and-control" title="Permalink to this heading">#</a></h3>
+<p>This question must be answered before
+diving into the nitty-gritty details that involve
+operability analysis.</p>
+<p>When designing a chemical process/plant, two main tasks
+naturally arise, when considering the processing of
+raw materials into value-added products such as chemicals
+or energy:</p>
+<ol class="arabic simple">
+<li><p><strong>Process design</strong>: Which decisions should be
+made with respect to the design variables of a given process,
+in a way that its overall objectives are
+achieved (economic profitability, constraints related to
+product purity/pollutant emissions, etc.)?</p></li>
+<li><p><strong>Control objectives</strong>: Which variables
+should be controlled, yielding the maximum operability of this process?
+That is, can the process “reach” its maximum operational capacity, given the
+ranges of the manipulated/input variables?</p></li>
+</ol>
+<p>Historically, tasks 1 and 2 were performed in a sequential manner:
+Firstly, an engineer/practitioner would come up with the design decisions,
+and only then the control objectives are assessed. Unfortunately, this can
+yield a process that is designed in a way that its operability capabilities
+are hindered. In other words, because the control objectives were
+not considered early in the design phase, the process itself might be not
+controlled or operable at all. To give you perspective on how challenging this
+problem is, there are reports dating back to the 40’s from Ziegler and Nichols <span id="id1">[<a class="reference internal" href="bibliography.html#id35" title="JG Ziegler and NB Nichols. Process lags in automatic-control circuits. Transactions of the American Society of Mechanical Engineers, 65(5):433–440, 1943.">14</a>]</span>
+(The same ones from the controller tuning laws) stressing out about this problem,
+mentioning the importance of interconnecting design and control.</p>
+<p>With this in mind, the need of quantifying achievability of a general nonlinear
+process naturally arises. The question: “Can one quantify achievability
+of process design and control objectives simultaneously?” was the underlying motivation
+for Prof. Christos Georgakis and his collaborators <span id="id2">[<a class="reference internal" href="bibliography.html#id15" title="Christos Georgakis, Derya Uztürk, Sivakumar Subramanian, and David R. Vinson. On the operability of continuous processes. Control Engineering Practice, 11(8):859 - 869, 2003. Process Dynamics and Control. URL: http://www.sciencedirect.com/science/article/pii/S0967066102002174, doi:https://doi.org/10.1016/S0967-0661(02)00217-4.">8</a>, <a class="reference internal" href="bibliography.html#id29" title="Fernando V. Lima and Christos Georgakis. Input-output operability of control systems: the steady-state case. Journal of Process Control, 20(6):769-776, 2010. URL: https://www.sciencedirect.com/science/article/pii/S095915241000079X, doi:https://doi.org/10.1016/j.jprocont.2010.04.008.">9</a>, <a class="reference internal" href="bibliography.html#id23" title="Sivakumar Subramanian and Christos Georgakis. Methodology for the steady-state operability analysis of plantwide systems. Industrial &amp; Engineering Chemistry Research, 44(20):7770-7786, 2005. URL: https://doi.org/10.1021/ie0490076, arXiv:https://doi.org/10.1021/ie0490076, doi:10.1021/ie0490076.">11</a>, <a class="reference internal" href="bibliography.html#id22" title="David R Vinson and Christos Georgakis. A new measure of process output controllability. Journal of Process Control, 10(2):185 - 194, 2000. URL: http://www.sciencedirect.com/science/article/pii/S0959152499000451, doi:https://doi.org/10.1016/S0959-1524(99)00045-1.">12</a>]</span>
+to formally define <strong>process operability</strong>
+and define a metric called the <strong>operability index</strong>.</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Process operability is a systematic framework to simultaneously assess
+design and control objectives early in the conceptual phase of industrial,
+typically large-scale, and nonlinear chemical processes.</p>
+</div>
+<p>To achieve the systematic assessment design and control objectives simultaneously,
+process operability is based on the definition of <strong>operability sets</strong>. These are spaces in the cartesian system that are defined with respect to
+the <strong>available inputs</strong> of a given process, their respective <strong>achievable outputs</strong>,
+the <strong>desired</strong> regions of operation in the input and output spaces and lastly,
+any <strong>expected disturbances</strong> that may be present.</p>
+<p>In order to formalize this in mathematical terms, one requirement of process
+operability analysis is to have a process model <span class="math notranslate nohighlight">\((M)\)</span> readily available. This model
+can be derived from first principles, using a process simulator platform and/or
+machine learning-based methods (surrogate-based). The process model can be defined in many ways, as long as it
+meets the criteria detailed below.
+Following <span id="id3">[<a class="reference internal" href="bibliography.html#id15" title="Christos Georgakis, Derya Uztürk, Sivakumar Subramanian, and David R. Vinson. On the operability of continuous processes. Control Engineering Practice, 11(8):859 - 869, 2003. Process Dynamics and Control. URL: http://www.sciencedirect.com/science/article/pii/S0967066102002174, doi:https://doi.org/10.1016/S0967-0661(02)00217-4.">8</a>]</span>,
+let’s define a process model <span class="math notranslate nohighlight">\(M\)</span> with <span class="math notranslate nohighlight">\(m\)</span> inputs, <span class="math notranslate nohighlight">\(p\)</span> outputs,
+<span class="math notranslate nohighlight">\(q\)</span> disturbances and <span class="math notranslate nohighlight">\(n\)</span> states as:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}M=\left\{\begin{array}{l}
+\dot{x}_s=f\left(x_s, u, d\right) \\
+y=g\left(x_s, u, d\right) \\
+h_1\left(\dot{x}_s, x_s, y, \dot{u}, u, d\right)=0 \\
+h_2\left(\dot{x}_s, x_s, y, \dot{u}, u, d\right) \geq 0
+\end{array}\right.\end{split}\]</div>
+<p>In which <span class="math notranslate nohighlight">\(u \in \mathbb{R}^m\)</span> are the inputs, <span class="math notranslate nohighlight">\(y \in \mathbb{R}^p\)</span> are the outputs,
+<span class="math notranslate nohighlight">\(d \in \mathbb{R}^q\)</span> are the disturbances and <span class="math notranslate nohighlight">\(x \in \mathbb{R}^n\)</span> are the state variables.
+Also, <span class="math notranslate nohighlight">\(f\)</span> and <span class="math notranslate nohighlight">\(g\)</span> are nonlinear maps and <span class="math notranslate nohighlight">\(h_1\)</span> and <span class="math notranslate nohighlight">\(h_2\)</span> correspond
+to equality and inequality process
+constraints, respectively.</p>
+<p>With the appropriate definition of the process model <span class="math notranslate nohighlight">\((M)\)</span>, we can start defining
+the <strong>operability sets.</strong></p>
+</section>
+</section>
+<section id="operability-sets">
+<h2>Operability sets<a class="headerlink" href="#operability-sets" title="Permalink to this heading">#</a></h2>
+<p>For the sake of illustration, the operability sets will be shown here in the two-dimensional
+space <span class="math notranslate nohighlight">\(\mathbb{R}^2\)</span>. However, all definitions carry over to any
+general dimensionalities.</p>
+<section id="the-available-input-set-ais">
+<h3>The Available Input Set (AIS)<a class="headerlink" href="#the-available-input-set-ais" title="Permalink to this heading">#</a></h3>
+<p>The available input set (AIS) is defined as the region that encapsulates the
+lower and upper bounds for the input variables available in the system. These
+can be either design or manipulated variables. In short, they are the manipulated inputs
+(<span class="math notranslate nohighlight">\(u  \in \mathbb{R}^m\)</span>)
+based on the design of the process that is limited
+by the process constraints:</p>
+<div class="math notranslate nohighlight">
+\[\text { AIS }=\left\{u \mid u_i^{\min } \leq u_i \leq u_i^{\max } ; 1 \leq i \leq m\right\}\]</div>
+<p>Visually:</p>
+<figure class="align-center" id="id8">
+<a class="reference internal image-reference" href="_images/AIS.jpg"><img alt="_images/AIS.jpg" src="_images/AIS.jpg" style="width: 427.5px; height: 360.5px;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 1 </span><span class="caption-text">Available Input Set (AIS)</span><a class="headerlink" href="#id8" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="the-achievable-output-set-aos">
+<h3>The Achievable Output Set (AOS)<a class="headerlink" href="#the-achievable-output-set-aos" title="Permalink to this heading">#</a></h3>
+<p>The Achievable Output Set (AOS) is defined as being the range of the outputs (<span class="math notranslate nohighlight">\(y \in \mathbb{R}^n\)</span>)
+that can be achieved using the inputs inside the AIS. It
+corresponds to everything that can be done in the output space given the ranges of the AIS.
+In mathematical terms, for a given fixed disturbance:</p>
+<div class="math notranslate nohighlight">
+\[\operatorname{AOS}(d)=\{y \mid y=M(u, d) ; u \in \operatorname{AIS}, d \text { is fixed}\}\]</div>
+<p>Visually:</p>
+<figure class="align-center" id="id9">
+<a class="reference internal image-reference" href="_images/AOS.jpg"><img alt="_images/AOS.jpg" src="_images/AOS.jpg" style="width: 450.5px; height: 434.5px;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 2 </span><span class="caption-text">Achievable Output Set (AOS)</span><a class="headerlink" href="#id9" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Note that the pictorial representation of the AOS is drawn intentionally as a non-convex
+region. This is a result of the process model <span class="math notranslate nohighlight">\((M)\)</span>
+being potentially nonlinear: A convex
+AIS may lead to a non-convex AOS!</p>
+</div>
+<p>The AOS is obtained from the process model <span class="math notranslate nohighlight">\((M)\)</span>, as depicted in the
+figure below:</p>
+<figure class="align-center" id="id10">
+<img alt="_images/Picture1.png" src="_images/Picture1.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 3 </span><span class="caption-text">AIS-AOS relationship via process model <span class="math notranslate nohighlight">\((M)\)</span></span><a class="headerlink" href="#id10" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="the-desired-output-set-dos">
+<h3>The Desired Output Set (DOS)<a class="headerlink" href="#the-desired-output-set-dos" title="Permalink to this heading">#</a></h3>
+<p>Despite the fact that the AOS can inform us what we can do with the current AIS
+region, we might <strong>desire</strong> to operate at a certain region given a variety of
+reasons, such as market demands, product purity specification, maximum pollutant
+emissions imposed by legislation and so on. Given this, the Desired Output Set
+(DOS) naturally arises to represent the production/target/efficiency
+requirements for the outputs that are not necessarily within the ranges of the AOS.</p>
+<div class="math notranslate nohighlight">
+\[\mathrm{DOS}=\left\{y \mid y_i^{\min } \leq y_i \leq y_i^{\max } ; 1 \leq i \leq n\right\}\]</div>
+<p>Visually, highlighted in red is the intersection between achievable and desired
+operations:</p>
+<figure class="align-center" id="id11">
+<a class="reference internal image-reference" href="_images/DOS.jpg"><img alt="_images/DOS.jpg" src="_images/DOS.jpg" style="width: 607.5px; height: 397.5px;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 4 </span><span class="caption-text">Desired Output Set (DOS)</span><a class="headerlink" href="#id11" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="the-desired-input-set-dis">
+<h3>The Desired Input Set (DIS)<a class="headerlink" href="#the-desired-input-set-dis" title="Permalink to this heading">#</a></h3>
+<p>If there is a desired region of operation in the output space, there has to be
+a desired region of operation in the input space that guarantees that the DOS
+is achieved. This is denominated as the Desired Input Set (DIS): A set of inputs
+required to reach the entire DOS,
+given a disturbance vector <span class="math notranslate nohighlight">\(d\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[\operatorname{DIS}(d)=\left\{u \mid u=M^{-1}(y, d) ; y \in \mathrm{DOS}, d \text { is fixed}\right\}\]</div>
+<p>Visually, highlighted in red is the intersection between available and desired
+operation in the input space:</p>
+<figure class="align-center" id="id12">
+<a class="reference internal image-reference" href="_images/DIS.jpg"><img alt="_images/DIS.jpg" src="_images/DIS.jpg" style="width: 398.5px; height: 340.0px;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 5 </span><span class="caption-text">Desired Input Set (DIS)</span><a class="headerlink" href="#id12" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Note that the DIS is not fully contained within the original AIS. This is
+expected since the DOS was not fully contained within the AOS for this
+illustrative example.</p>
+</div>
+<p>In order to obtain the DIS, it is necessary to perform an inverse mapping task: That is,
+from a defined DOS, calculate the correspondent DIS in the input space. This is
+an inverse problem <span id="id4">[<a class="reference internal" href="bibliography.html#id37" title="Victor Alves, John R. Kitchin, and Fernando V. Lima. An inverse mapping approach for process systems engineering using automatic differentiation and the implicit function theorem. AIChE Journal, n/a(n/a):e18119, 2023. URL: https://aiche.onlinelibrary.wiley.com/doi/abs/10.1002/aic.18119, arXiv:https://aiche.onlinelibrary.wiley.com/doi/pdf/10.1002/aic.18119, doi:https://doi.org/10.1002/aic.18119.">1</a>]</span> that may be challenging to tackle. As a visual representation,
+let the inverse map of the process model <span class="math notranslate nohighlight">\(M\)</span> be represented as <span class="math notranslate nohighlight">\(M^{-1}\)</span>,
+then the evaluation of the DIS follows the schematic:</p>
+<figure class="align-center" id="id13">
+<img alt="_images/inverse_map.jpg" src="_images/inverse_map.jpg" />
+<figcaption>
+<p><span class="caption-number">Fig. 6 </span><span class="caption-text">Inverse mapping from the DOS to the DIS</span><a class="headerlink" href="#id13" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="the-expected-disturbance-set-dis">
+<h3>The Expected Disturbance Set (DIS)<a class="headerlink" href="#the-expected-disturbance-set-dis" title="Permalink to this heading">#</a></h3>
+<p>Lastly, process disturbances may be present in a system. To represent this, we
+define the Expected Disturbance Set (EDS). This is composed of the disturbance
+variables, <span class="math notranslate nohighlight">\(d \in R^q\)</span>, that can represent process uncertainties and variabilities.
+The effect of the EDS on the AOS is to shift it throughout the specified disturbance range:</p>
+<figure class="align-center" id="id14">
+<img alt="_images/eds-aos.gif" src="_images/eds-aos.gif" />
+<figcaption>
+<p><span class="caption-number">Fig. 7 </span><span class="caption-text">Expected Disturbance Set (EDS) effect on the AOS</span><a class="headerlink" href="#id14" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Mathematically, the EDS is defined as:</p>
+<div class="math notranslate nohighlight">
+\[\mathrm{EDS}=\left\{d \mid d_i^{\min } \leq d_i \leq d_i^{\max } ; 1 \leq i \leq q\right\}\]</div>
+<p>The same effect is present in the input space, shifting the DIS for each disturbance
+scenario:</p>
+<figure class="align-center" id="id15">
+<img alt="_images/eds-dis.gif" src="_images/eds-dis.gif" />
+<figcaption>
+<p><span class="caption-number">Fig. 8 </span><span class="caption-text">Expected Disturbance Set (EDS) effect on the DIS</span><a class="headerlink" href="#id15" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Because of this shift, the AOS needs to be rewritten in the output space to reflect the <strong>intersection</strong>
+of each disturbance scenario:</p>
+<div class="math notranslate nohighlight">
+\[\operatorname{AOS}=\bigcap_{d \in E D S} \operatorname{AOS}_u(d)\]</div>
+<p>and as a realization of the union of each DIS in the input space for each disturbance scenario:</p>
+<div class="math notranslate nohighlight">
+\[\text { DIS }=\bigcup_{\mathbf{d} \in \mathrm{EDS}} \operatorname{DIS}_{\mathbf{y}}(\mathbf{d})\]</div>
+<p>In general, the overall effect of the EDS on both inputs and outputs can be visualized
+in the animation below:</p>
+<figure class="align-center" id="id16">
+<img alt="_images/eds-overall.gif" src="_images/eds-overall.gif" />
+<figcaption>
+<p><span class="caption-number">Fig. 9 </span><span class="caption-text">Expected Disturbance Set (EDS) effect on the overall process model</span><a class="headerlink" href="#id16" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Now let’s go back and take a closer look at available, achievable and desired operability sets,
+in both input and output spaces:</p>
+<figure class="align-center" id="id17">
+<img alt="_images/AIS-AOS-intersection.jpg" src="_images/AIS-AOS-intersection.jpg" />
+<figcaption>
+<p><span class="caption-number">Fig. 10 </span><span class="caption-text">Intersection between available/achievable and desired operations</span><a class="headerlink" href="#id17" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<p>By inspecting the figure above, we can see that due to the  geometric-based
+inherent nature of
+the operability sets, we are able to <strong>quantify achievability</strong> for any given
+process region, either in the input or output perspectives. This is represented
+in the figure above as the red-shaded area.</p>
+<p>In other words, the intersection between the area of an AIS/AOS and the DIS/DOS
+will yield how much the analyzed process is operable. Since we are talking about areas,
+we can quantify the intersection of such areas and this will yield a Process Operability metric!</p>
+<p>This leads to the definition of the Operability Index:</p>
+</section>
+</section>
+<section id="the-operability-index-oi">
+<h2>The Operability Index (OI)<a class="headerlink" href="#the-operability-index-oi" title="Permalink to this heading">#</a></h2>
+<p>The Operability Index is defined as the metric that quantifies achievability via
+the intersection of available or achievable operations with their corresponding desired regions.
+Mathematically, this can be expressed as follows:</p>
+<div class="math notranslate nohighlight">
+\[\mathrm{OI}=\frac{\mu(\mathrm{AOS} \cap \mathrm{DOS})}{\mu(\mathrm{DOS})}\]</div>
+<p>or</p>
+<div class="math notranslate nohighlight">
+\[\mathrm{OI}=\frac{\mu(\mathrm{AIS} \cap \mathrm{DIS})}{\mu(\mathrm{DIS})}\]</div>
+<p>From the outputs and inputs perspectives, respectively. In the definitions above,
+<span class="math notranslate nohighlight">\(\mu\)</span> indicates a measure of regions that varies depending on the
+dimensionality of the considered sets <span id="id5">[<a class="reference internal" href="bibliography.html#id5" title="Vitor Gazzaneo, Juan C. Carrasco, David R. Vinson, and Fernando V. Lima. Process operability algorithms: past, present, and future developments. Industrial &amp; Engineering Chemistry Research, 59(6):2457-2470, 2020. URL: https://doi.org/10.1021/acs.iecr.9b05181, arXiv:https://doi.org/10.1021/acs.iecr.9b05181, doi:10.1021/acs.iecr.9b05181.">6</a>, <a class="reference internal" href="bibliography.html#id29" title="Fernando V. Lima and Christos Georgakis. Input-output operability of control systems: the steady-state case. Journal of Process Control, 20(6):769-776, 2010. URL: https://www.sciencedirect.com/science/article/pii/S095915241000079X, doi:https://doi.org/10.1016/j.jprocont.2010.04.008.">9</a>]</span>. If in our example we
+had a 1D system, <span class="math notranslate nohighlight">\(\mu\)</span> would indicate length. Since we are in the <span class="math notranslate nohighlight">\(\mathbb{R}^2\)</span>
+space, it corresponds to area quantification. For 3D systems it would be the
+intersection between the volumes of the regions and for higher dimensional cases,
+hypervolumes. An additional important note is that due to the possible nonlinearity
+of the underlying process model, the OI value from the inputs’ perspective may yield
+a different value from the outputs’ perspective (and vice-versa). Using the OI from
+either perspective is a matter of convenience and the objective of the operability analysis:
+analyzing the operability in the output or input space.</p>
+<p>Note that in both cases, the OI is normalized with respect to the desired region
+of operation. This makes the OI range between 0 (or 0%) when a process is not operable at all
+to 1 (or 100%) when a process is fully operable. The animation below illustrates
+a situation in which the process is not fully operable and then 100% operable:</p>
+<figure class="align-center" id="id18">
+<img alt="_images/oi_animation.gif" src="_images/oi_animation.gif" />
+<figcaption>
+<p><span class="caption-number">Fig. 11 </span><span class="caption-text">Operability Index (OI) for different scenarios: not fully operable <span class="math notranslate nohighlight">\(vs\)</span>
+fully operable</span><a class="headerlink" href="#id18" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<section id="important-features-of-the-oi">
+<h3>Important features of the OI<a class="headerlink" href="#important-features-of-the-oi" title="Permalink to this heading">#</a></h3>
+<p>The OI has interesting properties such as:</p>
+<ol class="arabic simple">
+<li><p><strong>It corresponds to an inherently nonlinear measure</strong> <span id="id6">[<a class="reference internal" href="bibliography.html#id22" title="David R Vinson and Christos Georgakis. A new measure of process output controllability. Journal of Process Control, 10(2):185 - 194, 2000. URL: http://www.sciencedirect.com/science/article/pii/S0959152499000451, doi:https://doi.org/10.1016/S0959-1524(99)00045-1.">12</a>]</span>. This was,
+in fact, one of
+the original motivations for formalizing process operability analysis: to have a
+nonlinear measure of output controllability of any general chemical process, as
+a counterpart to measures of controllability that are classically available in
+the literature from linear systems control theory.</p></li>
+<li><p><strong>It is independent of the type of controller used</strong> <span id="id7">[<a class="reference internal" href="bibliography.html#id36" title="David R. Vinson and Christos Georgakis. Inventory control structure independence of the process operability index. Industrial &amp; Engineering Chemistry Research, 41(16):3970-3983, 2002. URL: https://doi.org/10.1021/ie0109814, arXiv:https://doi.org/10.1021/ie0109814, doi:10.1021/ie0109814.">13</a>]</span>. This
+is one of the most important properties of the OI as one can analyze the system’s operability without the need of knowing how the controllers
+will be implemented (decentralized PIDs, MPC, etc.). This property is particularly
+important as well when analyzing the control structure selection problem.</p></li>
+<li><p><strong>It allows for disturbances’ evaluations under “worst-case” scenario situations.</strong> Since
+the OI is independent of the controller type and it can be interpreted as a fundamental
+characteristic of the system studied, the OI can give the best-case (or worst) disturbance rejection
+scenarios when one is accounting for disturbances in the operability analysis.</p></li>
+</ol>
+<p>The next section will briefly cover the main algorithms that were developed in
+CODES research group to perform the main operability tasks: inverse mapping and
+operability set manipulations.</p>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="installation.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Installation</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="algorithms.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Process Operability Algorithms</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-process-operability">What is process operability?</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-underlying-problem-design-and-control">The underlying problem: Design and control</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#operability-sets">Operability sets</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-available-input-set-ais">The Available Input Set (AIS)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-achievable-output-set-aos">The Achievable Output Set (AOS)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-desired-output-set-dos">The Desired Output Set (DOS)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-desired-input-set-dis">The Desired Input Set (DIS)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-expected-disturbance-set-dis">The Expected Disturbance Set (DIS)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-operability-index-oi">The Operability Index (OI)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#important-features-of-the-oi">Important features of the OI</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Victor Alves @ Control, Optimization and Design for Energy and Sustainability (CODES) Group.
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

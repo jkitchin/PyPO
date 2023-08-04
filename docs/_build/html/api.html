@@ -1,0 +1,1525 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>API Documentation &#8212; PyPO&#39;s documentation.</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'api';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="pypo" href="_autosummary/pypo.html" />
+    <link rel="prev" title="Process Operability Algorithms" href="algorithms.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/pypo_logo.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="_static/pypo_logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    PyPO Documentation 1.0.0
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="operability_overview.html">Process Operability Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="algorithms.html">Process Operability Algorithms</a></li>
+<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">API Documentation</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="_autosummary/pypo.html">pypo</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="examples_gallery/index_example_gallery.html">Examples Gallery</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bibliography.html">Bibliography</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/victoraalves/python_operability" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/victoraalves/python_operability/issues/new?title=Issue%20on%20page%20%2Fapi.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/api.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>API Documentation</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conventional-mapping-ais-to-aos">Conventional mapping (AIS to AOS)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#forward-mapping">Forward mapping</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#example">Example</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#inverse-mapping-aos-dos-to-ais-dis">Inverse mapping (AOS/DOS to AIS/DIS)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#nlp-based">NLP-Based</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Example</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#implicit-mapping">Implicit mapping</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#multimodel-representation">Multimodel representation</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Example</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oi-evaluation">OI evaluation</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Example</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#utilities">Utilities</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">Example</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">Example</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">Example</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#api-documentation-list">API documentation list</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="api-documentation">
+<h1>API Documentation<a class="headerlink" href="#api-documentation" title="Permalink to this heading">#</a></h1>
+<p>The functions described below are part of PyPO and are
+classified based on their functionality. Each function also contains a worked
+example based on the famous <a class="reference internal" href="examples_gallery/operability_index_shower.html"><span class="doc std std-doc">Shower Problem</span></a><span id="id1">[<a class="reference internal" href="bibliography.html#id22" title="David R Vinson and Christos Georgakis. A new measure of process output controllability. Journal of Process Control, 10(2):185 - 194, 2000. URL: http://www.sciencedirect.com/science/article/pii/S0959152499000451, doi:https://doi.org/10.1016/S0959-1524(99)00045-1.">12</a>]</span></p>
+<section id="conventional-mapping-ais-to-aos">
+<h2>Conventional mapping (AIS to AOS)<a class="headerlink" href="#conventional-mapping-ais-to-aos" title="Permalink to this heading">#</a></h2>
+<section id="forward-mapping">
+<h3>Forward mapping<a class="headerlink" href="#forward-mapping" title="Permalink to this heading">#</a></h3>
+<dl class="py function">
+<dt class="sig sig-object py" id="pypo.AIS2AOS_map">
+<span class="sig-prename descclassname"><span class="pre">pypo.</span></span><span class="sig-name descname"><span class="pre">AIS2AOS_map</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Callable</span><span class="p"><span class="pre">[</span></span><span class="p"><span class="pre">[</span></span><span class="p"><span class="pre">...</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">ndarray</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">AIS_bound</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">AIS_resolution</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">plot</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">ndarray</span></span></span><a class="reference internal" href="_modules/pypo.html#AIS2AOS_map"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pypo.AIS2AOS_map" title="Permalink to this definition">#</a></dt>
+<dd><p>Forward mapping for Process Operability calculations (From AIS to AOS).
+From a Available Input Set (AIS) bounds and discretization resolution both
+defined by the user,
+this function calculates the corresponding discretized
+Available Output Set (AOS).</p>
+<p>This function is part of Python-based Process Operability package.</p>
+<p>Control, Optimization and Design for Energy and Sustainability
+(CODES) Group - West Virginia University - 2022/2023</p>
+<p>Authors: San Dinh &amp; Victor Alves</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>model</strong> (<em>Callable</em><em>[</em><em>...</em><em>,</em><em>Union</em><em>[</em><em>float</em><em>,</em><em>np.ndarray</em><em>]</em><em>]</em>) – Process model that calculates the relationship between inputs (AIS)
+and Outputs (AOS).</p></li>
+<li><p><strong>AIS_bound</strong> (<em>np.ndarray</em>) – Lower and upper bounds for the Available Input Set (AIS).</p></li>
+<li><p><strong>AIS_resolution</strong> (<em>np.ndarray</em>) – Resolution for the Available Input Set (AIS). This will be used to
+discretized the AIS.</p></li>
+<li><p><strong>plot</strong> (<em>bool</em>) – Turn on/off plotting. If dimension is d&lt;=3, plotting is available and
+both the Achievable Output Set (AOS) and Available Input
+Set (AIS) are plotted. Default is True.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><ul class="simple">
+<li><p><strong>AIS</strong> (<em>np.ndarray</em>) – Discretized Available Input Set (AIS).</p></li>
+<li><p><strong>AOS</strong> (<em>TYPE</em>) – Discretized Available Output Set (AIS).</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+<section id="example">
+<h4>Example<a class="headerlink" href="#example" title="Permalink to this heading">#</a></h4>
+<p>Obtaining the Achievable Output Set (AOS) for the shower problem.</p>
+<p>Importing PyPO and Numpy:</p>
+<div class="cell tag_remove-output docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>    <span class="kn">from</span> <span class="nn">pypo</span> <span class="kn">import</span> <span class="n">AIS2AOS_map</span>
+    <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Defining the equations that describe the process:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\left\{\begin{array}{c}
+y_1=u_1+u_2 \\
+y_2=\frac{\left(60 u_1+120 u_2\right)}{\left(u_1+u_2\right)}
+\end{array}\right. \\
+\\
+y_1 = 0\rightarrow y_2 = 90\end{split}\]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>    <span class="k">def</span> <span class="nf">shower_problem</span><span class="p">(</span><span class="n">u</span><span class="p">):</span>
+        <span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+        <span class="n">y</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">=</span><span class="n">u</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">+</span><span class="n">u</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+        <span class="k">if</span> <span class="n">y</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">!=</span><span class="mi">0</span><span class="p">:</span>
+            <span class="n">y</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">=</span><span class="p">(</span><span class="n">u</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="mi">60</span><span class="o">+</span><span class="n">u</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">*</span><span class="mi">120</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">u</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">+</span><span class="n">u</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">y</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">=</span><span class="p">(</span><span class="mi">60</span><span class="o">+</span><span class="mi">120</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span>
+            
+        <span class="k">return</span> <span class="n">y</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Defining the AIS bounds, as well as the discretization resolution:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>    <span class="n">AIS_bounds</span> <span class="o">=</span>  <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">]])</span>
+    <span class="n">resolution</span> <span class="o">=</span>  <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Obtain discretized AIS/AOS.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>    <span class="n">AIS</span><span class="p">,</span> <span class="n">AOS</span> <span class="o">=</span>  <span class="n">AIS2AOS_map</span><span class="p">(</span><span class="n">shower_problem</span><span class="p">,</span> <span class="n">AIS_bounds</span><span class="p">,</span>  <span class="n">resolution</span><span class="p">,</span> <span class="n">plot</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">AOS</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[[  0.       90.     ]
+  [  2.5     120.     ]
+  [  5.      120.     ]
+  [  7.5     120.     ]
+  [ 10.      120.     ]]
+
+ [[  2.5      60.     ]
+  [  5.       90.     ]
+  [  7.5     100.     ]
+  [ 10.      105.     ]
+  [ 12.5     108.     ]]
+
+ [[  5.       60.     ]
+  [  7.5      80.     ]
+  [ 10.       90.     ]
+  [ 12.5      96.     ]
+  [ 15.      100.     ]]
+
+ [[  7.5      60.     ]
+  [ 10.       75.     ]
+  [ 12.5      84.     ]
+  [ 15.       90.     ]
+  [ 17.5      94.28571]]
+
+ [[ 10.       60.     ]
+  [ 12.5      72.     ]
+  [ 15.       80.     ]
+  [ 17.5      85.71429]
+  [ 20.       90.     ]]]
+</pre></div>
+</div>
+<img alt="_images/077a66a838c8a66580778bf4e2030f99cae7e6af123323321e9ece71ba679e52.png" src="_images/077a66a838c8a66580778bf4e2030f99cae7e6af123323321e9ece71ba679e52.png" />
+</div>
+</div>
+</section>
+</section>
+<section id="inverse-mapping-aos-dos-to-ais-dis">
+<h3>Inverse mapping (AOS/DOS to AIS/DIS)<a class="headerlink" href="#inverse-mapping-aos-dos-to-ais-dis" title="Permalink to this heading">#</a></h3>
+</section>
+<section id="nlp-based">
+<h3>NLP-Based<a class="headerlink" href="#nlp-based" title="Permalink to this heading">#</a></h3>
+<dl class="py function">
+<dt class="sig sig-object py" id="pypo.nlp_based_approach">
+<span class="sig-prename descclassname"><span class="pre">pypo.</span></span><span class="sig-name descname"><span class="pre">nlp_based_approach</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">DOS_bounds</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">DOS_resolution</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">model</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Callable</span><span class="p"><span class="pre">[</span></span><span class="p"><span class="pre">[</span></span><span class="p"><span class="pre">...</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">ndarray</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">u0</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lb</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ub</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">constr</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">method</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'ipopt'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">plot</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ad</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">warmstart</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">ndarray</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">list</span><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="_modules/pypo.html#nlp_based_approach"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pypo.nlp_based_approach" title="Permalink to this definition">#</a></dt>
+<dd><p>Inverse mapping for Process Operability calculations. From a Desired Output
+Set (DOS) defined by the user, this function calculates the closest
+Feasible Desired Ouput set (DOS*) from the AOS and its respective Feasible
+Desired Input Set (DIS*), which gives insight about potential changes in
+design and/or operations of a given process model.</p>
+<p>This function is part of Python-based Process Operability package.</p>
+<p>Control, Optimization and Design for Energy and Sustainability (CODES)
+Group - West Virginia University - 2022</p>
+<p>Author: Victor Alves</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>DOS_bounds</strong> (<em>np.ndarray</em>) – Array containing the bounds of the Desired Output set (DOS). Each row
+corresponds to the lower and upper bound of each variable.</p></li>
+<li><p><strong>DOS_resolution</strong> (<em>np.ndarray</em>) – Array containing the resolution of the discretization grid for the DOS.
+Each element corresponds to the resolution of each variable. For a
+resolution defined as k, it will generate d^k points (in which d is the
+dimensionality of the problem).</p></li>
+<li><p><strong>model</strong> (<em>Callable</em><em>[</em><em>...</em><em>,</em><em>Union</em><em>[</em><em>float</em><em>,</em><em>np.ndarray</em><em>]</em><em>]</em>) – Process model that calculates the relationship between inputs (AIS-DIS)
+and Outputs (AOS-DOS).</p></li>
+<li><p><strong>u0</strong> (<em>np.ndarray</em>) – Initial estimate for the inverse mapping at each point. Should have
+same dimension as model inputs.</p></li>
+<li><p><strong>lb</strong> (<em>np.ndarray</em>) – Lower bound on inputs.</p></li>
+<li><p><strong>ub</strong> (<em>np.ndarray</em>) – Upper bound on inputs.</p></li>
+<li><p><strong>constr</strong> (<em>list</em><em>, </em><em>optional</em>) – List of functions containing constraints to the inverse mapping.
+The default is None. follows scipy.optimize synthax.</p></li>
+<li><p><strong>method</strong> (<em>str</em>) – <p>Optimization method used. The default is DE
+(Differential evolution from scipy). Set ‘ipopt’ if CyIpopt is
+installed and want to use gradient-based solver. Options are:</p>
+<blockquote>
+<div><p>For unconstrained problems:</p>
+<blockquote>
+<div><p>-‘trust-constr’</p>
+<p>-‘Nelder-Mead’</p>
+<p>-‘ipopt’</p>
+<p>-‘DE’</p>
+</div></blockquote>
+<p>For constrained problems:</p>
+<blockquote>
+<div><p>-‘ipopt’</p>
+<p>-‘DE’</p>
+<p>-‘SLSQP’</p>
+</div></blockquote>
+</div></blockquote>
+</p></li>
+<li><p><strong>plot</strong> (<em>bool</em>) – Turn on/off plotting. If dimension is d&lt;=3, plotting is available and
+both the Feasible Desired Output Set (DOS*) and Feasible Desired Input
+Set (DIS*) are plotted. Default is True.</p></li>
+<li><p><strong>ad</strong> (<em>bool</em>) – Turn on/off use of Automatic Differentiation using JAX. If Jax is
+installed, high-order data (jacobians, hessians) are obtained using AD.
+Default is False.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><ul class="simple">
+<li><p><strong>fDIS</strong> (<em>np.ndarray</em>) – Feasible Desired Input Set (DIS*). Array containing the solution for
+each point of the inverse-mapping.</p></li>
+<li><p><strong>fDIS</strong> (<em>np.ndarray</em>) – Feasible Desired Output Set (DOS*). Array containing the feasible
+output for each feasible input calculated via inverse-mapping.</p></li>
+<li><p><strong>message_list</strong> (<em>list</em>) – List containing the termination criteria for each optimization run
+performed for each DOS grid point.</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+<p class="rubric">References</p>
+<p>[1] J. C. Carrasco and F. V. Lima, “An optimization-based operability
+framework for process design and intensification of modular natural
+gas utilization systems,” Comput. &amp; Chem. Eng, 2017. <a class="reference external" href="https://doi.org/10.1016/j.compchemeng.2016.12.010">https://doi.org/10.1016/j.compchemeng.2016.12.010</a></p>
+</dd></dl>
+
+<section id="id2">
+<h4>Example<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h4>
+<p>Obtaining the Feasible Desired Input Set (DIS*) for the shower problem.</p>
+<p>Importing PyPO and Numpy:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>    <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+    <span class="kn">from</span> <span class="nn">pypo</span> <span class="kn">import</span> <span class="n">nlp_based_approach</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Defining lower and upper bound for the AIS/DIS inverse map:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>    <span class="n">lb</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span>
+    <span class="n">ub</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">100</span><span class="p">,</span><span class="mi">100</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Defining DOS bounds and resolution to obtain the inverse map:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>    <span class="n">DOS_bound</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">15</span><span class="p">,</span> <span class="mi">20</span><span class="p">],</span>
+                          <span class="p">[</span><span class="mi">80</span><span class="p">,</span> <span class="mi">100</span><span class="p">]])</span>
+    <span class="n">resolution</span> <span class="o">=</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Defining the equations that describe the process:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\left\{\begin{array}{c}
+y_1=u_1+u_2 \\
+y_2=\frac{\left(60 u_1+120 u_2\right)}{\left(u_1+u_2\right)}
+\end{array}\right. \\
+\\
+y_1 = 0\rightarrow y_2 = 90\end{split}\]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>    <span class="k">def</span> <span class="nf">shower_problem</span><span class="p">(</span><span class="n">u</span><span class="p">):</span>
+        <span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+        <span class="n">y</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">=</span><span class="n">u</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">+</span><span class="n">u</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+        <span class="k">if</span> <span class="n">y</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">!=</span><span class="mi">0</span><span class="p">:</span>
+            <span class="n">y</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">=</span><span class="p">(</span><span class="n">u</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="mi">60</span><span class="o">+</span><span class="n">u</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">*</span><span class="mi">120</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">u</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">+</span><span class="n">u</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">y</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">=</span><span class="p">(</span><span class="mi">60</span><span class="o">+</span><span class="mi">120</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span>
+            
+        <span class="k">return</span> <span class="n">y</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Obtaining the DIS*, DOS* and the convergence for each inverse map run.
+Additionally, using IPOPT as the NLP solver, enabling plotting of the process operability
+sets, cold-starting the
+NLP and using finite differences:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>    <span class="n">u0</span> <span class="o">=</span> <span class="n">u0</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">])</span> <span class="c1"># Initial estimate for inverse mapping.</span>
+    <span class="n">fDIS</span><span class="p">,</span> <span class="n">fDOS</span><span class="p">,</span> <span class="n">message</span> <span class="o">=</span> <span class="n">nlp_based_approach</span><span class="p">(</span><span class="n">DOS_bound</span><span class="p">,</span> 
+                                             <span class="n">resolution</span><span class="p">,</span> 
+                                             <span class="n">shower_problem</span><span class="p">,</span> 
+                                             <span class="n">u0</span><span class="p">,</span> 
+                                             <span class="n">lb</span><span class="p">,</span>
+                                             <span class="n">ub</span><span class="p">,</span> 
+                                             <span class="n">method</span><span class="o">=</span><span class="s1">&#39;ipopt&#39;</span><span class="p">,</span> 
+                                             <span class="n">plot</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> 
+                                             <span class="n">ad</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+                                             <span class="n">warmstart</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  0%|                                                                                           | 0/25 [00:00&lt;?, ?it/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  8%|██████▋                                                                            | 2/25 [00:00&lt;00:01, 12.80it/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 16%|█████████████▎                                                                     | 4/25 [00:00&lt;00:01, 13.60it/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 24%|███████████████████▉                                                               | 6/25 [00:00&lt;00:01, 13.22it/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 32%|██████████████████████████▌                                                        | 8/25 [00:00&lt;00:01, 13.05it/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 40%|████████████████████████████████▊                                                 | 10/25 [00:00&lt;00:01, 13.98it/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 48%|███████████████████████████████████████▎                                          | 12/25 [00:00&lt;00:00, 13.49it/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 56%|█████████████████████████████████████████████▉                                    | 14/25 [00:01&lt;00:00, 12.82it/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 64%|████████████████████████████████████████████████████▍                             | 16/25 [00:01&lt;00:00, 12.81it/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 72%|███████████████████████████████████████████████████████████                       | 18/25 [00:01&lt;00:00, 12.81it/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 80%|█████████████████████████████████████████████████████████████████▌                | 20/25 [00:01&lt;00:00, 12.81it/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 88%|████████████████████████████████████████████████████████████████████████▏         | 22/25 [00:01&lt;00:00, 12.80it/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 96%|██████████████████████████████████████████████████████████████████████████████▋   | 24/25 [00:01&lt;00:00, 12.80it/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>100%|██████████████████████████████████████████████████████████████████████████████████| 25/25 [00:01&lt;00:00, 12.99it/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<img alt="_images/275b4e56c69a631e10a8852ccf94c71aa52d9498bff874ba1f5ef1610a3f0298.png" src="_images/275b4e56c69a631e10a8852ccf94c71aa52d9498bff874ba1f5ef1610a3f0298.png" />
+</div>
+</div>
+</section>
+</section>
+</section>
+<section id="implicit-mapping">
+<h2>Implicit mapping<a class="headerlink" href="#implicit-mapping" title="Permalink to this heading">#</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="pypo.implicit_map">
+<span class="sig-prename descclassname"><span class="pre">pypo.</span></span><span class="sig-name descname"><span class="pre">implicit_map</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Callable</span><span class="p"><span class="pre">[</span></span><span class="p"><span class="pre">[</span></span><span class="p"><span class="pre">...</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">ndarray</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">domain_bound</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">domain_resolution</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">image_init</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">direction</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'forward'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">validation</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'predictor-corrector'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tol_cor</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0.0001</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">continuation</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'Explicit</span> <span class="pre">RK4'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">derivative</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'jax'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">jit</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">step_cutting</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pypo.html#implicit_map"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pypo.implicit_map" title="Permalink to this definition">#</a></dt>
+<dd><p>Performs implicit mapping of a implicitly defined process F(u,y) = 0.
+F can be a vector-valued, multivariable function, which is typically the
+case for chemical processes studied in Process Operability.
+This method relies in the implicit function theorem and automatic
+differentiation in order to obtain the mapping of the required
+input/output space. The
+mapping “direction” can be set by changing the ‘direction’ parameter.</p>
+<p>Authors: San Dinh &amp; Victor Alves</p>
+<p>Control, Optimization and Design for Energy and Sustainability
+(CODES) Group - West Virginia University - 2022/2023</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>implicit_model</strong> (<em>Callable</em><em>[</em><em>...</em><em>,</em><em>Union</em><em>[</em><em>float</em><em>,</em><em>np.ndarray</em><em>]</em><em>]</em>) – <p>Process model that describes the relationship between the input and
+output spaces. has to be written as a function in the following form:</p>
+<blockquote>
+<div><p>F(Input Vector, Output Vector) = 0</p>
+</div></blockquote>
+</p></li>
+<li><p><strong>domain_bound</strong> (<em>np.ndarray</em>) – Domains of the domain variables. Each row corresponds to the lower and
+upper bound of each variable. The domain terminology corresponds to the
+mathematical definition of the domain of a function: If the mapping is
+in the foward direction (direction = ‘forward’), then the domain
+corresponds to the process inputs. Otherwise, the mapping is in the
+inverse direction and the domain corresponds to the process outputs.</p></li>
+<li><p><strong>domain_resolution</strong> (<em>np.ndarray</em>) – Array containing the resolution of the discretization grid for the domain.
+Each element corresponds to the resolution of each variable. For a
+resolution defined as k, it will generate d^k points (in which d is the
+dimensionality of the domain).</p></li>
+<li><p><strong>direction</strong> (<em>str</em><em>, </em><em>optional</em>) – Mapping direction. this will define if a forward or inverse mapping is
+performed. The default is ‘forward’.</p></li>
+<li><p><strong>validation</strong> (<em>str</em><em>, </em><em>optional</em>) – <p>How the implicit mapping is obatined. The default is ‘predictor-corrector’.
+The available options are:</p>
+<blockquote>
+<div><p>’predictor’ =&gt; Numerical integration only.</p>
+<p>’corrector’ =&gt; Solved using a nonlinear equation solver.</p>
+<p>’predictor-corrector’ =&gt; Numerical integration + correction using
+nonlinear equation solver if F(u, y) &gt;= Tolerance.</p>
+</div></blockquote>
+</p></li>
+<li><p><strong>tol_cor</strong> (<em>float</em><em>, </em><em>optional</em>) – Tolerance for solution of the implicit function F(u,y) &lt;= tol_cor.
+The algorithm will keep solving the implicit mapping while
+F(u,y) &gt;= tol_cor. The default is 1e-4.</p></li>
+<li><p><strong>continuation</strong> (<em>str</em><em>, </em><em>optional</em>) – <p>Numerical continuation method used in the implicit mapping.
+The default is ‘Explicit RK4’ .</p>
+<p>’Explicit Euler’ - Euler’s method. Good for simple (nonstiff) problems.</p>
+<p>’Explicit RK4’   - Fixed-step 4th order Runge-Kutta. Good for moderate,
+mildly stiff problems. Good balance between accuracy and complexity.</p>
+<p>’Odeint’         - Variable step Runge-Kutta. Suitable for challenging,
+high-dimensional and stiff problems. This is a fully-featured IVP solver.</p>
+</p></li>
+<li><p><strong>derivative</strong> (<em>str</em><em>, </em><em>optional</em>) – Derivative calculation method. If JAX is available, automatic
+differentiation can be performed. The default is ‘jax’.</p></li>
+<li><p><strong>jit</strong> (<em>bool True</em><em>, </em><em>optional</em>) – JAX’s Just-in-time compilation (JIT) of implicit function and its
+respective multidimensional derivatives (Jacobians). JIT allows faster
+computation of the implicit map. The default is ‘True’.</p></li>
+<li><p><strong>step_cutting</strong> (<em>bool</em><em>, </em><em>False</em><em>, </em><em>optional</em>) – Cutting step strategy to subdivide the domain/image in case of stifness.
+The default is ‘False’.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><ul class="simple">
+<li><p><strong>domain_set</strong> (<em>np.ndarray</em>) – Set of values that corresponds to the domain of the implicit function.</p></li>
+<li><p><strong>image_set</strong> (<em>np.ndarray</em>) – Set of values that corresponds to the calculated image of the implicit
+function.,</p></li>
+<li><p><strong>domain_polyhedra</strong> (<em>list</em>) – Set of coordinates for polytopic construction of the domain. Can be used
+to create polytopes for multimodel representation and/or OI evaluation
+(see multimodel_rep and oi_calc modules)</p></li>
+<li><p><strong>image_polyhedra</strong> (<em>list</em>) – Set of coordinates for polytopic construction of the calculated image
+of the implicit function. Similarly to ‘domain_polyhedra’, this list can
+be used to construct polytopes for multimodel representation and OI
+evaluation.</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+<p class="rubric">References</p>
+<p>V., J. R. Kitchin, and F. V. Lima. “An inverse mapping approach for process
+systems engineering using automatic differentiation and the implicit
+function theorem”. AIChE Journal, 2023.
+<a class="reference external" href="https://doi.org/10.1002/aic.18119">https://doi.org/10.1002/aic.18119</a></p>
+</dd></dl>
+
+</section>
+<section id="multimodel-representation">
+<h2>Multimodel representation<a class="headerlink" href="#multimodel-representation" title="Permalink to this heading">#</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="pypo.multimodel_rep">
+<span class="sig-prename descclassname"><span class="pre">pypo.</span></span><span class="sig-name descname"><span class="pre">multimodel_rep</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">AIS_bound</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">resolution</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">model</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Callable</span><span class="p"><span class="pre">[</span></span><span class="p"><span class="pre">[</span></span><span class="p"><span class="pre">...</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">ndarray</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">polytopic_trace</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'simplices'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">perspective</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'outputs'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">plotting</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pypo.html#multimodel_rep"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pypo.multimodel_rep" title="Permalink to this definition">#</a></dt>
+<dd><p>Obtain a multimodel representation based on polytopes of Process Operability
+sets. This procedure is essential for evaluating the Operability Index (OI).</p>
+<p>This function is part of Python-based Process Operability package.</p>
+<p>Control, Optimization and Design for Energy and Sustainability (CODES)
+Group - West Virginia University - 2022/2023</p>
+<p>Author: Victor Alves</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>AIS_bound</strong> (<em>np.ndarray</em>) – Bounds on the Available Input Set (AIS). Each row corresponds to the
+lower and upper bound of each AIS variable.</p></li>
+<li><p><strong>resolution</strong> (<em>np.ndarray</em>) – Array containing the resolution of the discretization grid for the AIS.
+Each element corresponds to the resolution of each variable. For a
+resolution defined as k, it will generate d^k points (in which d is the
+dimensionality of the AIS).</p></li>
+<li><p><strong>model</strong> (<em>Callable</em><em>[</em><em>...</em><em>,</em><em>Union</em><em>[</em><em>float</em><em>,</em><em>np.ndarray</em><em>]</em><em>]</em>) – Process model that calculates the relationship between inputs (AIS-DIS)
+and Outputs (AOS-DOS).</p></li>
+<li><p><strong>polytopic_trace</strong> (<em>str</em><em>, </em><em>Optional.</em>) – Determines if the polytopes will be constructed using simplices or
+polyhedrons. Default is ‘simplices’. Additional option is ‘polyhedra’.</p></li>
+<li><p><strong>perspective</strong> (<em>str</em><em>, </em><em>Optional.</em>) – Defines if the calculation is to be done from the inputs/outputs
+perspective. Affects only labels in plots. Default is ‘outputs’.</p></li>
+<li><p><strong>plotting</strong> (<em>str</em><em>, </em><em>Optional.</em>) – Defines if the plotting of operability sets is desired (If the dimension
+is &lt;= 3). Default is ‘True’.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>finalpolytope</strong> – List with first argument being a convex polytope or collection of
+convex polytopes (named as Region)
+that describes the AOS. Can be used to calculate the Operability Index
+using <code class="docutils literal notranslate"><span class="pre">OI_eval</span></code>. Second argument is the coordinates of the AOS as a
+numpy array.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>list</p>
+</dd>
+</dl>
+<p class="rubric">References</p>
+<p>[1]  D. R., Vinson and C. Georgakis.  New Measure of Process Output
+Controllability. J. Process Control, 2000.
+<a class="reference external" href="https://doi.org/10.1016/S0959-1524(99)00045-1">https://doi.org/10.1016/S0959-1524(99)00045-1</a></p>
+<p>[2]  C. Georgakis, D. Uztürk, S. Subramanian, and D. R. Vinson. On the
+Operability of Continuous Processes. Control Eng. Pract., 2003.
+<a class="reference external" href="https://doi.org/10.1016/S0967-0661(02)00217-4">https://doi.org/10.1016/S0967-0661(02)00217-4</a></p>
+<p>[3] V.Gazzaneo, J. C. Carrasco, D. R. Vinson, and F. V. Lima. Process
+Operability Algorithms: Past, Present, and Future Developments.
+Ind. &amp; Eng. Chem. Res. 59 (6), 2457-2470, 2020.
+<a class="reference external" href="https://doi.org/10.1021/acs.iecr.9b05181">https://doi.org/10.1021/acs.iecr.9b05181</a></p>
+</dd></dl>
+
+<section id="id3">
+<h3>Example<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h3>
+<p>Obtaining the Achievable Output Set (AOS) for the shower problem.</p>
+<p>Importing PyPO and Numpy:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>    <span class="kn">from</span> <span class="nn">pypo</span> <span class="kn">import</span> <span class="n">multimodel_rep</span>
+    <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Defining the equations that describe the process:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\left\{\begin{array}{c}
+y_1=u_1+u_2 \\
+y_2=\frac{\left(60 u_1+120 u_2\right)}{\left(u_1+u_2\right)}
+\end{array}\right. \\
+\\
+y_1 = 0\rightarrow y_2 = 90\end{split}\]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>    <span class="k">def</span> <span class="nf">shower_problem</span><span class="p">(</span><span class="n">u</span><span class="p">):</span>
+        <span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+        <span class="n">y</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">=</span><span class="n">u</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">+</span><span class="n">u</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+        <span class="k">if</span> <span class="n">y</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">!=</span><span class="mi">0</span><span class="p">:</span>
+            <span class="n">y</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">=</span><span class="p">(</span><span class="n">u</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="mi">60</span><span class="o">+</span><span class="n">u</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">*</span><span class="mi">120</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">u</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">+</span><span class="n">u</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">y</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">=</span><span class="p">(</span><span class="mi">60</span><span class="o">+</span><span class="mi">120</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span>
+            
+        <span class="k">return</span> <span class="n">y</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Defining the AIS bounds and the discretization resolution:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>    <span class="n">AIS_bounds</span> <span class="o">=</span>  <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">]])</span>
+    <span class="n">AIS_resolution</span> <span class="o">=</span>  <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Obtaining multimodel representation of paired polytopes for the AOS:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>    <span class="n">AOS_region</span>  <span class="o">=</span>  <span class="n">multimodel_rep</span><span class="p">(</span><span class="n">AIS_bounds</span><span class="p">,</span> <span class="n">AIS_resolution</span><span class="p">,</span> <span class="n">shower_problem</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/f4af24567d591ab4f72146d27d193c2b6d4ba5d84e4e0776c24d02ae085f3bb9.png" src="_images/f4af24567d591ab4f72146d27d193c2b6d4ba5d84e4e0776c24d02ae085f3bb9.png" />
+</div>
+</div>
+</section>
+</section>
+<section id="oi-evaluation">
+<h2>OI evaluation<a class="headerlink" href="#oi-evaluation" title="Permalink to this heading">#</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="pypo.OI_eval">
+<span class="sig-prename descclassname"><span class="pre">pypo.</span></span><span class="sig-name descname"><span class="pre">OI_eval</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">AS</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Region</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">DS</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">perspective</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'outputs'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hypervol_calc</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'robust'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">plotting</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pypo.html#OI_eval"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pypo.OI_eval" title="Permalink to this definition">#</a></dt>
+<dd><p>Operability Index (OI) calculation. From a Desired Output
+Set (DOS) defined by the user, this function calculates the intersection
+between achievable (AOS) and desired output operation (DOS). Similarly, the
+OI can be also calculated from the inputs’ perspective, as an intersection
+between desired input (DIS) and available input (AIS). This function is able
+to  evaluate the OI in any dimension, ranging from 1-d (length) up to
+higher dimensions (Hypervolumes, &gt; 3-d), aided by the Polytope package.</p>
+<p>This function is part of Python-based Process Operability package.</p>
+<p>Control, Optimization and Design for Energy and Sustainability (CODES)
+Group - West Virginia University - 2022/2023</p>
+<p>Author: Victor Alves</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>AS</strong> (<em>pc.Region</em>) – Available input set (AIS) or Achievable output set (AOS) represented as
+a series of paired (and convex) polytopes. This region is easily
+obtained using the multimodel_rep function.</p></li>
+<li><p><strong>DS</strong> (<em>np.ndarray</em>) – Array containing the desired operation, either in the inputs (DIS) or
+outputs perspective (DOS).</p></li>
+<li><p><strong>perspective</strong> (<em>str</em><em>, </em><em>Optional.</em>) – String that determines in which perspective the OI will be evaluated:
+inputs or outputs. default is ‘outputs’.</p></li>
+<li><p><strong>hypervol_calc</strong> (<em>str</em><em>, </em><em>Optional.</em>) – Determines how the approach when evaluating hypervolumes. Default is
+‘robust’, an implementation that switches from qhull’s hypervolume
+evaluation or polytope’s evaluation depending on the dimensionality of
+the problem. Additional option is ‘polytope’, Polytope’s package own
+implementation of hypervolumes evaluation being used in problems of
+any dimension.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>OI</strong> – Operability Index value. Ranges from 0 to 100%. A fully operable
+process has OI = 100% and if not fully operable, OI &lt; 100%.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+<p class="rubric">References</p>
+<p>[1]  D. R., Vinson and C. Georgakis.  New Measure of Process Output
+Controllability. J. Process Control, 2000.
+<a class="reference external" href="https://doi.org/10.1016/S0959-1524(99)00045-1">https://doi.org/10.1016/S0959-1524(99)00045-1</a></p>
+<p>[2]  C. Georgakis, D. Uztürk, S. Subramanian, and D. R. Vinson. On the
+Operability of Continuous Processes. Control Eng. Pract., 2003.
+<a class="reference external" href="https://doi.org/10.1016/S0967-0661(02)00217-4">https://doi.org/10.1016/S0967-0661(02)00217-4</a></p>
+<p>[3] V.Gazzaneo, J. C. Carrasco, D. R. Vinson, and F. V. Lima. Process
+Operability Algorithms: Past, Present, and Future Developments.
+Ind. &amp; Eng. Chem. Res. 59 (6), 2457-2470, 2020.
+<a class="reference external" href="https://doi.org/10.1021/acs.iecr.9b05181">https://doi.org/10.1021/acs.iecr.9b05181</a></p>
+</dd></dl>
+
+<section id="id4">
+<h3>Example<a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h3>
+<p>Evaluating the OI for the shower problem for a given DOS.</p>
+<p>Importing PyPO and Numpy:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>    <span class="kn">from</span> <span class="nn">pypo</span> <span class="kn">import</span> <span class="n">multimodel_rep</span><span class="p">,</span> <span class="n">OI_eval</span>
+    <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Defining the equations that describe the process:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\left\{\begin{array}{c}
+y_1=u_1+u_2 \\
+y_2=\frac{\left(60 u_1+120 u_2\right)}{\left(u_1+u_2\right)}
+\end{array}\right. \\
+\\
+y_1 = 0\rightarrow y_2 = 90\end{split}\]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>    <span class="k">def</span> <span class="nf">shower_problem</span><span class="p">(</span><span class="n">u</span><span class="p">):</span>
+        <span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+        <span class="n">y</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">=</span><span class="n">u</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">+</span><span class="n">u</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+        <span class="k">if</span> <span class="n">y</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">!=</span><span class="mi">0</span><span class="p">:</span>
+            <span class="n">y</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">=</span><span class="p">(</span><span class="n">u</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="mi">60</span><span class="o">+</span><span class="n">u</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">*</span><span class="mi">120</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">u</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">+</span><span class="n">u</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">y</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">=</span><span class="p">(</span><span class="mi">60</span><span class="o">+</span><span class="mi">120</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span>
+            
+        <span class="k">return</span> <span class="n">y</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Defining the AIS bounds and the discretization resolution:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>    <span class="n">AIS_bounds</span> <span class="o">=</span>  <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">]])</span>
+    <span class="n">AIS_resolution</span> <span class="o">=</span>  <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Obtaining multimodel representation of paired polytopes for the AOS:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>    <span class="n">AOS_region</span>  <span class="o">=</span>  <span class="n">multimodel_rep</span><span class="p">(</span><span class="n">AIS_bounds</span><span class="p">,</span> <span class="n">AIS_resolution</span><span class="p">,</span> <span class="n">shower_problem</span><span class="p">,</span>
+    <span class="n">plotting</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Either plotting is not possible (dimension &gt; 3) or you have chosen plotting=False. The operability set is still returned as a polytopic region of general dimension.
+</pre></div>
+</div>
+</div>
+</div>
+<p>Defining a DOS region between <span class="math notranslate nohighlight">\(y_1 =[10-20], y_2=[70-100]\)</span></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>    <span class="n">DOS_bounds</span> <span class="o">=</span>  <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">],</span> 
+                            <span class="p">[</span><span class="mi">70</span><span class="p">,</span> <span class="mi">100</span><span class="p">]])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Evaluating the OI and seeing the intersection between the operability sets:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>    <span class="n">OI</span> <span class="o">=</span> <span class="n">OI_eval</span><span class="p">(</span><span class="n">AOS_region</span><span class="p">,</span> <span class="n">DOS_bounds</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/87a2ff01f3afb07bf6f55e5845f5d0c90ae98bd9c663ea5b9276e9098a5a627d.png" src="_images/87a2ff01f3afb07bf6f55e5845f5d0c90ae98bd9c663ea5b9276e9098a5a627d.png" />
+</div>
+</div>
+</section>
+</section>
+<section id="utilities">
+<h2>Utilities<a class="headerlink" href="#utilities" title="Permalink to this heading">#</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="pypo.create_grid">
+<span class="sig-prename descclassname"><span class="pre">pypo.</span></span><span class="sig-name descname"><span class="pre">create_grid</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">region_bounds</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">region_resolution</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">tuple</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pypo.html#create_grid"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pypo.create_grid" title="Permalink to this definition">#</a></dt>
+<dd><p>Create a multidimensional, discretized grid, given the bounds and the
+resolution.</p>
+<p>This function is part of Python-based Process Operability package.</p>
+<p>Control, Optimization and Design for Energy and Sustainability (CODES)
+Group - West Virginia University - 2022/2023</p>
+<p>Author: San Dinh</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>region_bounds</strong> (<em>np.ndarray</em>) – Numpy array that contains the bounds of a (possibily) multidimensional
+region. Each row corresponds to the lower and upper bound of each
+variable that constitutes the hypercube.</p></li>
+<li><p><strong>region_resolution</strong> (<em>np.ndarray</em>) – Array containing the resolution of the discretization grid for the
+region. Each element corresponds to the resolution of each variable.
+For a resolution defined as k, it will generate d^k points
+(in which d is the dimensionality of the problem).</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>region_grid</strong> – Multidimensional array that represents the grid descritization of the
+region in Euclidean coordinates.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>np.ndarray</p>
+</dd>
+</dl>
+</dd></dl>
+
+<section id="id5">
+<h3>Example<a class="headerlink" href="#id5" title="Permalink to this heading">#</a></h3>
+<p>Creating a 2-dimensional discretized rectangular grid for given DOS bounds.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>    <span class="kn">from</span> <span class="nn">pypo</span> <span class="kn">import</span> <span class="n">create_grid</span>
+
+    <span class="n">DOS_bounds</span> <span class="o">=</span>  <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">],</span> 
+                            <span class="p">[</span><span class="mi">70</span><span class="p">,</span> <span class="mi">100</span><span class="p">]])</span>
+
+    <span class="n">DOS_resolution</span> <span class="o">=</span>  <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+
+    <span class="n">DOS_points</span> <span class="o">=</span> <span class="n">create_grid</span><span class="p">(</span><span class="n">DOS_bounds</span><span class="p">,</span> <span class="n">DOS_resolution</span><span class="p">)</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="n">DOS_points</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[[ 10.  70.]
+  [ 10.  85.]
+  [ 10. 100.]]
+
+ [[ 15.  70.]
+  [ 15.  85.]
+  [ 15. 100.]]
+
+ [[ 20.  70.]
+  [ 20.  85.]
+  [ 20. 100.]]]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Visualizing this grid:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>    <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+    <span class="n">DOS_points</span> <span class="o">=</span> <span class="n">DOS_points</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+
+    <span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">DOS_points</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">DOS_points</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x1e37d80e0a0&gt;
+</pre></div>
+</div>
+<img alt="_images/f875edd32bca6c939cdff4cdcab8cc7cb644ca8b163436dab176f5adbb7edcc1.png" src="_images/f875edd32bca6c939cdff4cdcab8cc7cb644ca8b163436dab176f5adbb7edcc1.png" />
+</div>
+</div>
+<dl class="py function">
+<dt class="sig sig-object py" id="pypo.points2simplices">
+<span class="sig-prename descclassname"><span class="pre">pypo.</span></span><span class="sig-name descname"><span class="pre">points2simplices</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">AIS</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">AOS</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">ndarray</span></span></span><a class="reference internal" href="_modules/pypo.html#points2simplices"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pypo.points2simplices" title="Permalink to this definition">#</a></dt>
+<dd><p>Generation of connected simplices (k+1 convex hull of k+1 vertices)
+based on the AIS/AOS points.</p>
+<p>This function is part of Python-based Process Operability package.</p>
+<p>Control, Optimization and Design for Energy and Sustainability
+(CODES) Group - West Virginia University - 2022/2023</p>
+<p>Author: San Dinh</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>AIS</strong> (<em>np.ndarray</em>) – Array containing the points that constitutes the AIS.</p></li>
+<li><p><strong>AOS</strong> (<em>np.ndarray</em>) – Array containing the points that constitutes the AOS.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><ul class="simple">
+<li><p><strong>AIS_simplices</strong> (<em>np.ndarray</em>) – List of input (AIS) vertices for each simplex generated, in the form of
+an array.</p></li>
+<li><p><strong>AOS_simplices</strong> (<em>np.ndarray</em>) – List of output (AOS) vertices for each simplex generated, in the form
+of an array.</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="id6">
+<h3>Example<a class="headerlink" href="#id6" title="Permalink to this heading">#</a></h3>
+<p>Generating paired simplicial polytopes for the AIS/AOS generated for the
+shower problem example.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>    <span class="kn">from</span> <span class="nn">pypo</span> <span class="kn">import</span> <span class="n">points2simplices</span>
+
+    <span class="n">AIS_poly</span><span class="p">,</span> <span class="n">AOS_poly</span> <span class="o">=</span> <span class="n">points2simplices</span><span class="p">(</span><span class="n">AIS</span><span class="p">,</span><span class="n">AOS</span><span class="p">)</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;AIS Simplices </span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">AIS_poly</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;AOS Simplices </span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">AOS_poly</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>AIS Simplices 
+ [array([[2.5, 0. , 0. ],
+       [2.5, 2.5, 0. ]]), array([[2.5, 2.5, 0. ],
+       [2.5, 0. , 0. ]]), array([[5. , 2.5, 2.5],
+       [2.5, 2.5, 0. ]]), array([[5. , 5. , 2.5],
+       [2.5, 0. , 0. ]]), array([[7.5, 5. , 5. ],
+       [2.5, 2.5, 0. ]]), array([[7.5, 7.5, 5. ],
+       [2.5, 0. , 0. ]]), array([[10. ,  7.5,  7.5],
+       [ 2.5,  2.5,  0. ]]), array([[10. , 10. ,  7.5],
+       [ 2.5,  0. ,  0. ]]), array([[2.5, 0. , 0. ],
+       [5. , 5. , 2.5]]), array([[2.5, 2.5, 0. ],
+       [5. , 2.5, 2.5]]), array([[5. , 2.5, 2.5],
+       [5. , 5. , 2.5]]), array([[5. , 5. , 2.5],
+       [5. , 2.5, 2.5]]), array([[7.5, 5. , 5. ],
+       [5. , 5. , 2.5]]), array([[7.5, 7.5, 5. ],
+       [5. , 2.5, 2.5]]), array([[10. ,  7.5,  7.5],
+       [ 5. ,  5. ,  2.5]]), array([[10. , 10. ,  7.5],
+       [ 5. ,  2.5,  2.5]]), array([[2.5, 0. , 0. ],
+       [7.5, 7.5, 5. ]]), array([[2.5, 2.5, 0. ],
+       [7.5, 5. , 5. ]]), array([[5. , 2.5, 2.5],
+       [7.5, 7.5, 5. ]]), array([[5. , 5. , 2.5],
+       [7.5, 5. , 5. ]]), array([[7.5, 5. , 5. ],
+       [7.5, 7.5, 5. ]]), array([[7.5, 7.5, 5. ],
+       [7.5, 5. , 5. ]]), array([[10. ,  7.5,  7.5],
+       [ 7.5,  7.5,  5. ]]), array([[10. , 10. ,  7.5],
+       [ 7.5,  5. ,  5. ]]), array([[ 2.5,  0. ,  0. ],
+       [10. , 10. ,  7.5]]), array([[ 2.5,  2.5,  0. ],
+       [10. ,  7.5,  7.5]]), array([[ 5. ,  2.5,  2.5],
+       [10. , 10. ,  7.5]]), array([[ 5. ,  5. ,  2.5],
+       [10. ,  7.5,  7.5]]), array([[ 7.5,  5. ,  5. ],
+       [10. , 10. ,  7.5]]), array([[ 7.5,  7.5,  5. ],
+       [10. ,  7.5,  7.5]]), array([[10. ,  7.5,  7.5],
+       [10. , 10. ,  7.5]]), array([[10. , 10. ,  7.5],
+       [10. ,  7.5,  7.5]])]
+AOS Simplices 
+ [array([[  5. ,   2.5,   0. ],
+       [ 90. , 120. ,  90. ]]), array([[ 5. ,  2.5,  0. ],
+       [90. , 60. , 90. ]]), array([[ 7.5,  5. ,  2.5],
+       [80. , 90. , 60. ]]), array([[ 7.5,  5. ,  2.5],
+       [80. , 60. , 60. ]]), array([[10. ,  7.5,  5. ],
+       [75. , 80. , 60. ]]), array([[10. ,  7.5,  5. ],
+       [75. , 60. , 60. ]]), array([[12.5, 10. ,  7.5],
+       [72. , 75. , 60. ]]), array([[12.5, 10. ,  7.5],
+       [72. , 60. , 60. ]]), array([[  7.5,   5. ,   2.5],
+       [100. , 120. , 120. ]]), array([[  7.5,   5. ,   2.5],
+       [100. ,  90. , 120. ]]), array([[ 10. ,   7.5,   5. ],
+       [ 90. , 100. ,  90. ]]), array([[10. ,  7.5,  5. ],
+       [90. , 80. , 90. ]]), array([[12.5, 10. ,  7.5],
+       [84. , 90. , 80. ]]), array([[12.5, 10. ,  7.5],
+       [84. , 75. , 80. ]]), array([[15. , 12.5, 10. ],
+       [80. , 84. , 75. ]]), array([[15. , 12.5, 10. ],
+       [80. , 72. , 75. ]]), array([[ 10. ,   7.5,   5. ],
+       [105. , 120. , 120. ]]), array([[ 10. ,   7.5,   5. ],
+       [105. , 100. , 120. ]]), array([[ 12.5,  10. ,   7.5],
+       [ 96. , 105. , 100. ]]), array([[ 12.5,  10. ,   7.5],
+       [ 96. ,  90. , 100. ]]), array([[15. , 12.5, 10. ],
+       [90. , 96. , 90. ]]), array([[15. , 12.5, 10. ],
+       [90. , 84. , 90. ]]), array([[17.5    , 15.     , 12.5    ],
+       [85.71429, 90.     , 84.     ]]), array([[17.5    , 15.     , 12.5    ],
+       [85.71429, 80.     , 84.     ]]), array([[ 12.5,  10. ,   7.5],
+       [108. , 120. , 120. ]]), array([[ 12.5,  10. ,   7.5],
+       [108. , 105. , 120. ]]), array([[ 15. ,  12.5,  10. ],
+       [100. , 108. , 105. ]]), array([[ 15. ,  12.5,  10. ],
+       [100. ,  96. , 105. ]]), array([[ 17.5    ,  15.     ,  12.5    ],
+       [ 94.28571, 100.     ,  96.     ]]), array([[17.5    , 15.     , 12.5    ],
+       [94.28571, 90.     , 96.     ]]), array([[20.     , 17.5    , 15.     ],
+       [90.     , 94.28571, 90.     ]]), array([[20.     , 17.5    , 15.     ],
+       [90.     , 85.71429, 90.     ]])]
+</pre></div>
+</div>
+</div>
+</div>
+<dl class="py function">
+<dt class="sig sig-object py" id="pypo.points2polyhedra">
+<span class="sig-prename descclassname"><span class="pre">pypo.</span></span><span class="sig-name descname"><span class="pre">points2polyhedra</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">AIS</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">AOS</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">ndarray</span></span></span><a class="reference internal" href="_modules/pypo.html#points2polyhedra"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pypo.points2polyhedra" title="Permalink to this definition">#</a></dt>
+<dd><p>Generation of connected polyhedra based on the AIS/AOS points.</p>
+<p>This function is part of Python-based Process Operability package.</p>
+<p>Control, Optimization and Design for Energy and Sustainability
+(CODES) Group - West Virginia University - 2022/2023</p>
+<p>Author: San Dinh</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>AIS</strong> (<em>np.ndarray</em>) – Array containing the points that constitutes the AIS.</p></li>
+<li><p><strong>AOS</strong> (<em>np.ndarray</em>) – Array containing the points that constitutes the AOS.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><ul class="simple">
+<li><p><strong>AIS_polytope</strong> (<em>np.ndarray</em>) – List of input (AIS) vertices for each polytope generated, in the form
+of an array.</p></li>
+<li><p><strong>AOS_polytope</strong> (<em>np.ndarray</em>) – List of output (AOS) vertices for each polyhedra generated, in the form
+of an array.</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="id7">
+<h3>Example<a class="headerlink" href="#id7" title="Permalink to this heading">#</a></h3>
+<p>Generating paired polyhedrons for the AIS/AOS generated for the
+shower problem example.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>    <span class="kn">from</span> <span class="nn">pypo</span> <span class="kn">import</span> <span class="n">points2polyhedra</span>
+
+    <span class="n">AIS_poly</span><span class="p">,</span> <span class="n">AOS_poly</span> <span class="o">=</span> <span class="n">points2polyhedra</span><span class="p">(</span><span class="n">AIS</span><span class="p">,</span><span class="n">AOS</span><span class="p">)</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;AIS Polyhedrons </span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">AIS_poly</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;AOS Polyhedrons </span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">AOS_poly</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>AIS Polyhedrons 
+ [array([[0. , 0. , 2.5, 2.5],
+       [0. , 2.5, 0. , 2.5]]), array([[2.5, 2.5, 5. , 5. ],
+       [0. , 2.5, 0. , 2.5]]), array([[5. , 5. , 7.5, 7.5],
+       [0. , 2.5, 0. , 2.5]]), array([[ 7.5,  7.5, 10. , 10. ],
+       [ 0. ,  2.5,  0. ,  2.5]]), array([[0. , 0. , 2.5, 2.5],
+       [2.5, 5. , 2.5, 5. ]]), array([[2.5, 2.5, 5. , 5. ],
+       [2.5, 5. , 2.5, 5. ]]), array([[5. , 5. , 7.5, 7.5],
+       [2.5, 5. , 2.5, 5. ]]), array([[ 7.5,  7.5, 10. , 10. ],
+       [ 2.5,  5. ,  2.5,  5. ]]), array([[0. , 0. , 2.5, 2.5],
+       [5. , 7.5, 5. , 7.5]]), array([[2.5, 2.5, 5. , 5. ],
+       [5. , 7.5, 5. , 7.5]]), array([[5. , 5. , 7.5, 7.5],
+       [5. , 7.5, 5. , 7.5]]), array([[ 7.5,  7.5, 10. , 10. ],
+       [ 5. ,  7.5,  5. ,  7.5]]), array([[ 0. ,  0. ,  2.5,  2.5],
+       [ 7.5, 10. ,  7.5, 10. ]]), array([[ 2.5,  2.5,  5. ,  5. ],
+       [ 7.5, 10. ,  7.5, 10. ]]), array([[ 5. ,  5. ,  7.5,  7.5],
+       [ 7.5, 10. ,  7.5, 10. ]]), array([[ 7.5,  7.5, 10. , 10. ],
+       [ 7.5, 10. ,  7.5, 10. ]])]
+AOS Polyhedrons 
+ [array([[  0. ,   2.5,   2.5,   5. ],
+       [ 90. , 120. ,  60. ,  90. ]]), array([[ 2.5,  5. ,  5. ,  7.5],
+       [60. , 90. , 60. , 80. ]]), array([[ 5. ,  7.5,  7.5, 10. ],
+       [60. , 80. , 60. , 75. ]]), array([[ 7.5, 10. , 10. , 12.5],
+       [60. , 75. , 60. , 72. ]]), array([[  2.5,   5. ,   5. ,   7.5],
+       [120. , 120. ,  90. , 100. ]]), array([[  5. ,   7.5,   7.5,  10. ],
+       [ 90. , 100. ,  80. ,  90. ]]), array([[ 7.5, 10. , 10. , 12.5],
+       [80. , 90. , 75. , 84. ]]), array([[10. , 12.5, 12.5, 15. ],
+       [75. , 84. , 72. , 80. ]]), array([[  5. ,   7.5,   7.5,  10. ],
+       [120. , 120. , 100. , 105. ]]), array([[  7.5,  10. ,  10. ,  12.5],
+       [100. , 105. ,  90. ,  96. ]]), array([[10. , 12.5, 12.5, 15. ],
+       [90. , 96. , 84. , 90. ]]), array([[12.5    , 15.     , 15.     , 17.5    ],
+       [84.     , 90.     , 80.     , 85.71429]]), array([[  7.5,  10. ,  10. ,  12.5],
+       [120. , 120. , 105. , 108. ]]), array([[ 10. ,  12.5,  12.5,  15. ],
+       [105. , 108. ,  96. , 100. ]]), array([[ 12.5    ,  15.     ,  15.     ,  17.5    ],
+       [ 96.     , 100.     ,  90.     ,  94.28571]]), array([[15.     , 17.5    , 17.5    , 20.     ],
+       [90.     , 94.28571, 85.71429, 90.     ]])]
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="api-documentation-list">
+<h3>API documentation list<a class="headerlink" href="#api-documentation-list" title="Permalink to this heading">#</a></h3>
+<table class="autosummary longtable table autosummary">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="_autosummary/pypo.html#module-pypo" title="pypo"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pypo</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="algorithms.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Process Operability Algorithms</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="_autosummary/pypo.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">pypo</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conventional-mapping-ais-to-aos">Conventional mapping (AIS to AOS)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#forward-mapping">Forward mapping</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#example">Example</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#inverse-mapping-aos-dos-to-ais-dis">Inverse mapping (AOS/DOS to AIS/DIS)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#nlp-based">NLP-Based</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Example</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#implicit-mapping">Implicit mapping</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#multimodel-representation">Multimodel representation</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Example</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oi-evaluation">OI evaluation</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Example</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#utilities">Utilities</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">Example</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">Example</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">Example</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#api-documentation-list">API documentation list</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Victor Alves @ Control, Optimization and Design for Energy and Sustainability (CODES) Group.
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
