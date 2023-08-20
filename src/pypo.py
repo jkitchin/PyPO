@@ -10,7 +10,7 @@ from tqdm.notebook import tqdm
 import numpy as np
 from   numpy.linalg import norm , pinv
 
-# Optimizitaion algorithms
+# Optimization algorithms
 import scipy as sp
 from scipy.optimize import root
 from scipy.optimize import differential_evolution as DE
@@ -21,15 +21,10 @@ import polytope as pc
 from polytope.polytope import region_diff
 from polytope.polytope import _get_patch
 
-
-
-
-
 # Plots
 import matplotlib.pyplot as plt
 import matplotlib.patches as mpatches
 from mpl_toolkits.mplot3d.art3d import Poly3DCollection
-
 
 
 # Setting default plot options
@@ -408,7 +403,7 @@ def OI_eval(AS: pc.Region,
     
     '''
     
-    # Defining Polytopes for manipulation. Obatining polytopes in min-rep if
+    # Defining Polytopes for manipulation. Obtaining polytopes in min-rep if
     # applicable.
 
     DS_region = pc.box2poly(DS)
@@ -468,7 +463,7 @@ def OI_eval(AS: pc.Region,
         AS_label = 'Available Input Set (AIS)'
         int_label = r'$ AIS \cap DIS$'
 
-    # plot if 2D/ 3D
+    # plot if 2D / 3D
     if plot is True:
         if DS_region.dim == 2:
             
@@ -1172,7 +1167,7 @@ def AIS2AOS_map(model: Callable[...,Union[float,np.ndarray]],
      EDS_resolution: np.ndarray = None, plot: bool = True)-> Union[np.ndarray,np.ndarray]:
     '''
     Forward mapping for Process Operability calculations (From AIS to AOS). 
-    From a Available Input Set (AIS) bounds and discretization resolution both
+    From an Available Input Set (AIS) bounds and discretization resolution both
     defined by the user, 
     this function calculates the corresponding discretized 
     Available Output Set (AOS).
@@ -1353,10 +1348,8 @@ def AIS2AOS_map(model: Callable[...,Union[float,np.ndarray]],
                 ax.set_title('$AIS_{u}$')
                 ax.set_ylabel('$u_{2}$')
                 ax.set_zlabel('$u_{3}$')
-                # ax.set_ylabel('$u_{2}$')
             elif EDS_bound.shape[0] == 2:
                 ax.set_title('$AIS_{u} \, and  \, EDS_{d}$')
-                
                 ax.set_ylabel('$d_{1}$')
                 ax.set_zlabel('$d_{2}$')
             elif EDS_bound.shape[0] == 1:
@@ -1671,7 +1664,7 @@ def implicit_map(model:             Callable[...,Union[float,np.ndarray]],
     ----------
     implicit_model : Callable[...,Union[float,np.ndarray]]
         Process model that describes the relationship between the input and 
-        output spaces. has to be written as a function in the following form:
+        output spaces. Has to be written as a function in the following form:
             F(Input Vector, Output Vector) = 0
     domain_bound : np.ndarray
         Domains of the domain variables. Each row corresponds to the lower and
@@ -1722,7 +1715,7 @@ def implicit_map(model:             Callable[...,Union[float,np.ndarray]],
         respective multidimensional derivatives (Jacobians). JIT allows faster
         computation of the implicit map. The default is 'True'.
     step_cutting:      bool, False, optional
-        Cutting step strategy to subdivide the domain/image in case of stifness.
+        Cutting step strategy to subdivide the domain/image in case of stiffness.
         The default is 'False'.
     
     Returns
@@ -1744,7 +1737,7 @@ def implicit_map(model:             Callable[...,Union[float,np.ndarray]],
         
     References
     ----------
-    V., J. R. Kitchin, and F. V. Lima. "An inverse mapping approach for process
+    V. Alves, J. R. Kitchin, and F. V. Lima. "An inverse mapping approach for process
     systems engineering using automatic differentiation and the implicit 
     function theorem". AIChE Journal, 2023. 
     https://doi.org/10.1002/aic.18119
@@ -1849,7 +1842,7 @@ def implicit_map(model:             Callable[...,Union[float,np.ndarray]],
         print('Ivalid continuation method. Exiting algorithm.')
         sys.exit()
         
-    # Pre-alocating the domain set
+    # Pre-allocating the domain set
     numInput = np.prod(domain_resolution)
     nInput = domain_bound.shape[0]
     nOutput = image_init.shape[0]
@@ -1885,10 +1878,6 @@ def implicit_map(model:             Callable[...,Union[float,np.ndarray]],
     # Preallocate domain and image polyhedras
     domain_polyhedra = list()
     image_polyhedra = list()
-
-
-    # domain_polyhedra = list()
-    # image_polyhedra = list()
 
     for i in tqdm(range(numInput)):
         inputID[0] = int(np.mod(i, domain_resolution[0]))
